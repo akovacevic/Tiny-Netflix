@@ -1,0 +1,9 @@
+﻿<Window x:Class="Tiny_Netflix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tiny Netflix" Height="600" Width="800" Loaded="Window_Loaded" KeyDown="Window_KeyDown" ResizeMode="NoResize" WindowStyle="None" StateChanged="Window_StateChanged">
+    <Grid>
+        <WebBrowser x:Name="webBrowser" KeyDown="webBrowser_KeyDown" KeyUp="webBrowser_KeyUp"/>
+
+    </Grid>
+</Window>
