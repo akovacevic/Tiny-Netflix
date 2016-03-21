@@ -39,8 +39,12 @@ namespace Tiny_Netflix
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             window = this;
-            webBrowser.Navigating += new NavigatingCancelEventHandler(WebBrowser_Navigating);
-            webBrowser.Navigate("http://www.netflix.com");
+            Browser.Address += new NavigatingCancelEventHandler(WebBrowser_Navigating);
+            //webBrowser.Navigate("http://www.netflix.com");
+
+            Browser.Address = "http://www.netflix.com";
+            this.Width = 800;
+            this.Height = 600;
 
             HotKeyManager.RegisterHotKey(Keys.X, KeyModifiers.Alt);
             HotKeyManager.RegisterHotKey(Keys.Q, KeyModifiers.Alt);
@@ -87,7 +91,7 @@ namespace Tiny_Netflix
             }
             else if (e.Uri.ToString().Contains("/browse"))
             {
-                this.Width = 800;
+                this.Width = 400;
                 this.Height = 600;
                 this.Topmost = false;
                 this.Left = (SystemParameters.PrimaryScreenWidth / 2) - (this.Width / 2);

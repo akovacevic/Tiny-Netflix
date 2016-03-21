@@ -1,9 +1,11 @@
 ﻿<Window x:Class="Tiny_Netflix.MainWindow"
+        Loaded="Window_Loaded"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Tiny Netflix" Height="600" Width="800" Loaded="Window_Loaded" KeyDown="Window_KeyDown" ResizeMode="NoResize" WindowStyle="None" StateChanged="Window_StateChanged">
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf">
     <Grid>
-        <WebBrowser x:Name="webBrowser" KeyDown="webBrowser_KeyDown" KeyUp="webBrowser_KeyUp"/>
-
+        <wpf:ChromiumWebBrowser Grid.Row="0"
+                          x:Name="Browser"
+                          Address="http://www.netflix.com" />
     </Grid>
 </Window>
